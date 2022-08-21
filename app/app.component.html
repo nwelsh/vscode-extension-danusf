@@ -1,0 +1,71 @@
+<div class="container">
+  <mat-card>
+    <mat-toolbar
+      color="primary"
+    >
+      VS Code Extension Downloader
+    </mat-toolbar>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item>
+          <mat-form-field>
+            <input
+              matInput
+              required
+              placeholder="Marketplace URL"
+              [(ngModel)]="marketplaceUrl"
+              (keyup)="makeLink()"
+            />
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item>
+          <mat-form-field>
+            <input
+              matInput
+              placeholder="Version"
+              [(ngModel)]="version"
+              (keyup)="makeLink()"
+            />
+          </mat-form-field>
+        </mat-list-item>
+        <mat-list-item>
+          <div
+            *ngIf="vsix; else needValues"
+            class="downloadZone"
+          >
+            <a
+              mat-raised-button
+              color="accent"
+              [href]="vsix"
+            >
+              <mat-icon>file_download</mat-icon>
+              <b>{{name}}</b> <small>({{version}})</small> by {{author}}
+            </a>
+            <br />
+            <br />
+            <small class="dzMessage">
+              Reminder: Change filename to <b><code>{{name}}.vsix</code></b> after downloading
+            </small>
+          </div>
+          <ng-template
+            #needValues
+          >
+            <!--<div class="downloadZone dzMessage">
+              <mat-icon>arrow_upward</mat-icon> complete the fields above
+            </div>-->
+          </ng-template>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-104612430-1', 'auto');
+  ga('send', 'pageview');
+</script>

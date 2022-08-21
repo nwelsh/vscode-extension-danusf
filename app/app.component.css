@@ -1,0 +1,27 @@
+mat-card {
+  max-width: 800px;
+  min-width: 400px;
+  margin: 40px auto;
+  padding: 0;
+}
+
+mat-card-content {
+  padding: 0 16px 24px 16px;
+}
+
+mat-list-item {
+  margin-top: 24px;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.downloadZone {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dzMessage {
+  color: gray;
+}
